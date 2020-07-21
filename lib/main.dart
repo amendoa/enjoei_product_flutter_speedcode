@@ -1,111 +1,392 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Product Page Enjoei',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
+        fontFamily: 'Proxima Nova',
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ProductPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class EnjoeiColors {
+  EnjoeiColors._();
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  static const Color gray100 = Color(0xfff4f2f0);
+  static const Color gray200 = Color(0xffedebe9);
+  static const Color gray300 = Color(0xffcac5bf);
+  static const Color gray400 = Color(0x80cac5bf);
+  static const Color gray500 = Color(0xff7d7a77);
+  static const Color gray600 = Color(0xff222222);
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  static const Color white = Color(0xffffffff);
 
-  final String title;
+  static const Color primary100 = Color(0xfff16984);
+  static const Color primary200 = Color(0xfff05b78);
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
+  static const Color green = Color(0xff6fcf67);
+  static const Color yellow = Color(0xffffc517);
+  static const Color red = Color(0xffe85657);
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class Header extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) => Container(
+        alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SvgPicture.asset(
+                'assets/icons/arrow-left.svg',
+                height: 24,
+                width: 24,
+                color: EnjoeiColors.gray600,
+              ),
+              Text(
+                'Regata marrom',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: EnjoeiColors.gray600,
+                ),
+              ),
+              SvgPicture.asset(
+                'assets/icons/share.svg',
+                height: 24,
+                width: 24,
+                color: EnjoeiColors.gray600,
+              ),
+            ],
+          ),
+        ),
+        decoration: BoxDecoration(
+          color: EnjoeiColors.white,
+          border: Border(
+            bottom: BorderSide(
+              width: 1,
+              color: EnjoeiColors.gray100,
+            ),
+          ),
+        ),
+      );
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  @override
+  Size get preferredSize => Size.fromHeight(58);
+}
+
+class Footer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Container(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/home.svg',
+                      height: 24,
+                      width: 24,
+                      color: EnjoeiColors.gray600,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'home',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/search.svg',
+                      height: 24,
+                      width: 24,
+                      color: EnjoeiColors.primary100,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'busca',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.primary100,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/pricetag.svg',
+                      height: 24,
+                      width: 24,
+                      color: EnjoeiColors.gray600,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'vender',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/inbox.svg',
+                      height: 24,
+                      width: 24,
+                      color: EnjoeiColors.gray600,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'mensagens',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/images/profiles/amendoa.jpg',
+                        height: 30,
+                        width: 30,
+                      ),
+                    ),
+                    Text(
+                      'amendoa',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        height: 48,
+        decoration: BoxDecoration(
+          color: EnjoeiColors.white,
+          border: Border(
+            top: BorderSide(
+              width: 1,
+              color: EnjoeiColors.gray100,
+            ),
+          ),
+        ),
+      );
+}
+
+class ProductSliderDot extends StatelessWidget {
+  final bool isActive;
+
+  ProductSliderDot({
+    @required this.isActive,
+  });
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(
+          left: 4.0,
+          right: 4.0,
+          bottom: 12,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: isActive ? EnjoeiColors.primary200 : EnjoeiColors.white,
+          ),
+          height: 8,
+          width: 8,
+        ),
+      );
+}
+
+class SizeTag extends StatelessWidget {
+  const SizeTag({
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(height: 40, width: 40, color: Colors.red),
-          ],
+    return Padding(
+      padding: EdgeInsets.all(5),
+      child: Align(
+        alignment: Alignment.bottomLeft,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 5,
+            bottom: 5,
+            left: 8,
+            right: 8,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(3),
+            ),
+            color: EnjoeiColors.white,
+          ),
+          child: Text(
+            'Tam P',
+            style: TextStyle(
+              color: EnjoeiColors.gray500,
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class ProductSlider extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _ProductSliderState();
+}
+
+class _ProductSliderState extends State<ProductSlider> {
+  int currentItem = 0;
+
+  var images = [
+    {
+      'id': 0,
+      'src': 'assets/images/products/tanktop/1.jpg',
+    },
+    {
+      'id': 1,
+      'src': 'assets/images/products/tanktop/2.jpg',
+    }
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.bottomLeft,
+      children: <Widget>[
+        Container(
+          child: PageView(
+            children: images
+                .map((item) => Image.asset(
+                      item['src'],
+                    ))
+                .toList(),
+            onPageChanged: (currentPage) {
+              if (currentPage != currentItem) {
+                setState(() {
+                  currentItem = currentPage;
+                });
+              }
+            },
+          ),
+          height: MediaQuery.of(context).size.width,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            Expanded(
+              child: SizeTag(),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: images
+                    .map((item) => ProductSliderDot(
+                          isActive: item['id'] == currentItem,
+                        ))
+                    .toList(),
+              ),
+            ),
+            Expanded(
+              child: SizedBox(),
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+class ProductPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: Header(),
+          bottomNavigationBar: Footer(),
+          body: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                ProductSlider(),
+              ],
+            ),
+          ),
+          // body: Center(
+          //   child: Column(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: <Widget>[SvgPicture.asset('assets/icons/yeah.svg')],
+          //   ),
+          // ),
+        ),
+      ),
     );
   }
 }
