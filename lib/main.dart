@@ -363,6 +363,119 @@ class _ProductSliderState extends State<ProductSlider> {
   }
 }
 
+class ProductActions extends StatelessWidget {
+  const ProductActions({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            width: 1,
+            color: EnjoeiColors.gray100,
+          ),
+        ),
+      ),
+      padding: const EdgeInsets.only(
+        top: 20,
+        bottom: 20,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Stack(
+                  overflow: Overflow.visible,
+                  alignment: Alignment.topRight,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      'assets/icons/yeah.svg',
+                      height: 24,
+                      width: 24,
+                      color: EnjoeiColors.gray600,
+                    ),
+                    Positioned(
+                      top: -10,
+                      right: -12,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          left: 5,
+                          right: 5,
+                          top: 3,
+                          bottom: 3,
+                        ),
+                        decoration: BoxDecoration(
+                          color: EnjoeiColors.gray100,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          '45',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: EnjoeiColors.gray600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 7,
+                ),
+                Text(
+                  'yeah-yeahs',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: EnjoeiColors.gray600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Center(
+            child: Container(
+              width: 1,
+              height: 44,
+              color: EnjoeiColors.gray100,
+            ),
+          ),
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                SvgPicture.asset(
+                  'assets/icons/comment.svg',
+                  height: 24,
+                  width: 24,
+                  color: EnjoeiColors.gray600,
+                ),
+                SizedBox(
+                  height: 7,
+                ),
+                Text(
+                  'Pergunte ao vendedor',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: EnjoeiColors.gray600,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -376,15 +489,16 @@ class ProductPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ProductSlider(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                  ),
+                  child: ProductActions(),
+                ),
               ],
             ),
           ),
-          // body: Center(
-          //   child: Column(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: <Widget>[SvgPicture.asset('assets/icons/yeah.svg')],
-          //   ),
-          // ),
         ),
       ),
     );
