@@ -818,6 +818,71 @@ class ProductInfo extends StatelessWidget {
   }
 }
 
+class ProductDesc extends StatelessWidget {
+  const ProductDesc({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        bottom: 10,
+        top: 10,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'regata marrom',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w800,
+              color: EnjoeiColors.gray600,
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'gatinha marrom confeccionada em algodão, o modelo possui estampa de bolinhas',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: EnjoeiColors.gray600,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'estado de conservação: em bom estado',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: EnjoeiColors.gray600,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'medidas:\nbusto: 62.0cm\ncomprimento: 61.0cm',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: EnjoeiColors.gray600,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'administrado por enjoeipro',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: EnjoeiColors.gray600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -843,7 +908,8 @@ class ProductPage extends StatelessWidget {
                       PriceInfo(),
                       PaymentInfo(),
                       ActionButtons(),
-                      ProductInfo()
+                      ProductInfo(),
+                      ProductDesc(),
                     ],
                   ),
                 ),
