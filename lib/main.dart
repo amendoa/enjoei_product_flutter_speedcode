@@ -910,6 +910,69 @@ class ProductPage extends StatelessWidget {
                       ActionButtons(),
                       ProductInfo(),
                       ProductDesc(),
+                      Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 1,
+                                color: EnjoeiColors.gray400,
+                              ),
+                              borderRadius: BorderRadius.circular(3)),
+                          child: Column(
+                            children: <Widget>[
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Row(
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/images/profiles/enjoei.jpg',
+                                          height: 36,
+                                          width: 36,
+                                        ),
+                                        SizedBox(width: 15),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              'Enjoei pro',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w700,
+                                                color: EnjoeiColors.gray600,
+                                              ),
+                                            ),
+                                            Text(
+                                              'Embu das Artes, SP',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: EnjoeiColors.gray500,
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Text(
+                                      'Seguir',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: EnjoeiColors.primary100,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )),
                     ],
                   ),
                 ),
