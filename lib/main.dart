@@ -818,6 +818,351 @@ class ProductInfo extends StatelessWidget {
   }
 }
 
+class SellerInfo extends StatelessWidget {
+  const SellerInfo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(top: 10, bottom: 10),
+        padding: EdgeInsets.only(top: 20, bottom: 20),
+        decoration: BoxDecoration(
+            border: Border.all(
+              width: 1,
+              color: EnjoeiColors.gray400,
+            ),
+            borderRadius: BorderRadius.circular(3)),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Image.asset(
+                        'assets/images/profiles/enjoei.jpg',
+                        height: 36,
+                        width: 36,
+                      ),
+                      SizedBox(width: 15),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Enjoei pro',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: EnjoeiColors.gray600,
+                            ),
+                          ),
+                          Text(
+                            'Embu das Artes, SP',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: EnjoeiColors.gray500,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Text(
+                    'Seguir',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: EnjoeiColors.primary100,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              alignment: Alignment.center,
+              height: 1,
+              color: EnjoeiColors.gray400,
+            ),
+            SizedBox(height: 18),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Avaliação',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            'assets/icons/star.svg',
+                            height: 15,
+                            width: 15,
+                            color: EnjoeiColors.yellow,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          SvgPicture.asset(
+                            'assets/icons/star.svg',
+                            height: 15,
+                            width: 15,
+                            color: EnjoeiColors.yellow,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          SvgPicture.asset(
+                            'assets/icons/star.svg',
+                            height: 15,
+                            width: 15,
+                            color: EnjoeiColors.yellow,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          SvgPicture.asset(
+                            'assets/icons/star.svg',
+                            height: 15,
+                            width: 15,
+                            color: EnjoeiColors.yellow,
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          SvgPicture.asset(
+                            'assets/icons/star.svg',
+                            height: 15,
+                            width: 15,
+                            color: EnjoeiColors.yellow,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Últimas entregas',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                              color: EnjoeiColors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: EnjoeiColors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: EnjoeiColors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: EnjoeiColors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: EnjoeiColors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            height: 10,
+                            width: 10,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 20),
+            Container(
+              alignment: Alignment.center,
+              height: 1,
+              color: EnjoeiColors.gray400,
+            ),
+            SizedBox(height: 18),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'À venda',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '122 mil',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: EnjoeiColors.gray600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Vendidos',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '337 mil',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: EnjoeiColors.gray600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Container(
+              alignment: Alignment.center,
+              height: 1,
+              color: EnjoeiColors.gray400,
+            ),
+            SizedBox(height: 18),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Tempo médio de envio',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '2 dias',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: EnjoeiColors.gray600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'No Enjoei desde',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: EnjoeiColors.gray500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Jul/2017',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: EnjoeiColors.gray600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ));
+  }
+}
+
 class ProductDesc extends StatelessWidget {
   const ProductDesc({
     Key key,
@@ -910,230 +1255,7 @@ class ProductPage extends StatelessWidget {
                       ActionButtons(),
                       ProductInfo(),
                       ProductDesc(),
-                      Container(
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.only(top: 20, bottom: 20),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 1,
-                                color: EnjoeiColors.gray400,
-                              ),
-                              borderRadius: BorderRadius.circular(3)),
-                          child: Column(
-                            children: <Widget>[
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Row(
-                                      children: <Widget>[
-                                        Image.asset(
-                                          'assets/images/profiles/enjoei.jpg',
-                                          height: 36,
-                                          width: 36,
-                                        ),
-                                        SizedBox(width: 15),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              'Enjoei pro',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w700,
-                                                color: EnjoeiColors.gray600,
-                                              ),
-                                            ),
-                                            Text(
-                                              'Embu das Artes, SP',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: EnjoeiColors.gray500,
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    Text(
-                                      'Seguir',
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                        color: EnjoeiColors.primary100,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 1,
-                                color: EnjoeiColors.gray400,
-                              ),
-                              SizedBox(height: 18),
-                              Row(
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Column(
-                                      children: <Widget>[
-                                        Text(
-                                          'Avaliação',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w300,
-                                            color: EnjoeiColors.gray500,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            SvgPicture.asset(
-                                              'assets/icons/star.svg',
-                                              height: 15,
-                                              width: 15,
-                                              color: EnjoeiColors.yellow,
-                                            ),
-                                            SizedBox(
-                                              width: 4,
-                                            ),
-                                            SvgPicture.asset(
-                                              'assets/icons/star.svg',
-                                              height: 15,
-                                              width: 15,
-                                              color: EnjoeiColors.yellow,
-                                            ),
-                                            SizedBox(
-                                              width: 4,
-                                            ),
-                                            SvgPicture.asset(
-                                              'assets/icons/star.svg',
-                                              height: 15,
-                                              width: 15,
-                                              color: EnjoeiColors.yellow,
-                                            ),
-                                            SizedBox(
-                                              width: 4,
-                                            ),
-                                            SvgPicture.asset(
-                                              'assets/icons/star.svg',
-                                              height: 15,
-                                              width: 15,
-                                              color: EnjoeiColors.yellow,
-                                            ),
-                                            SizedBox(
-                                              width: 4,
-                                            ),
-                                            SvgPicture.asset(
-                                              'assets/icons/star.svg',
-                                              height: 15,
-                                              width: 15,
-                                              color: EnjoeiColors.yellow,
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      children: <Widget>[
-                                        Text(
-                                          'Últimas entregas',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w300,
-                                            color: EnjoeiColors.gray500,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: EnjoeiColors.green,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            SizedBox(
-                                              width: 6,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: EnjoeiColors.green,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            SizedBox(
-                                              width: 6,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: EnjoeiColors.green,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            SizedBox(
-                                              width: 6,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: EnjoeiColors.green,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            SizedBox(
-                                              width: 6,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: EnjoeiColors.green,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            SizedBox(
-                                              width: 6,
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(height: 20),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 1,
-                                color: EnjoeiColors.gray400,
-                              ),
-                              SizedBox(height: 18),
-                            ],
-                          )),
+                      SellerInfo(),
                     ],
                   ),
                 ),
