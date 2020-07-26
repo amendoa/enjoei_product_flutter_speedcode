@@ -639,6 +639,71 @@ class PaymentInfo extends StatelessWidget {
   }
 }
 
+class ActionButtons extends StatelessWidget {
+  const ActionButtons({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: 10,
+        ),
+        SizedBox(
+          height: 40,
+          width: double.infinity,
+          child: FlatButton(
+            onPressed: () {},
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
+            color: EnjoeiColors.primary200,
+            highlightColor: EnjoeiColors.primary100,
+            splashColor: Colors.transparent,
+            child: Text(
+              'eu quero',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: EnjoeiColors.white,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        SizedBox(
+          height: 40,
+          width: double.infinity,
+          child: OutlineButton(
+            onPressed: () {},
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
+            borderSide: BorderSide(
+              width: 1,
+              color: EnjoeiColors.gray400,
+            ),
+            color: EnjoeiColors.primary200,
+            highlightColor: EnjoeiColors.gray200,
+            highlightedBorderColor: EnjoeiColors.gray400,
+            splashColor: Colors.transparent,
+            child: Text(
+              'fazer oferta',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: EnjoeiColors.primary100,
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -662,7 +727,8 @@ class ProductPage extends StatelessWidget {
                     children: <Widget>[
                       ProductActions(),
                       PriceInfo(),
-                      PaymentInfo()
+                      PaymentInfo(),
+                      ActionButtons(),
                     ],
                   ),
                 ),
