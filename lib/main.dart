@@ -476,6 +476,72 @@ class ProductActions extends StatelessWidget {
   }
 }
 
+class PriceInfo extends StatelessWidget {
+  const PriceInfo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 20),
+        Text(
+          'R\$ 20',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w800,
+            color: EnjoeiColors.gray600,
+          ),
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        Row(
+          children: <Widget>[
+            Text(
+              '4x ',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: EnjoeiColors.gray600,
+              ),
+            ),
+            Text(
+              'R\$ 5',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+                color: EnjoeiColors.gray600,
+              ),
+            ),
+            Transform.translate(
+              offset: Offset(0, -4),
+              child: Text(
+                ',00 ',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w700,
+                  color: EnjoeiColors.gray600,
+                ),
+              ),
+            ),
+            Text(
+              'sem juros',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: EnjoeiColors.gray600,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -494,7 +560,13 @@ class ProductPage extends StatelessWidget {
                     left: 20,
                     right: 20,
                   ),
-                  child: ProductActions(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      ProductActions(),
+                      PriceInfo(),
+                    ],
+                  ),
                 ),
               ],
             ),
