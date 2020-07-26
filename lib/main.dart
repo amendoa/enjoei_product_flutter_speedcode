@@ -542,6 +542,103 @@ class PriceInfo extends StatelessWidget {
   }
 }
 
+class PaymentInfo extends StatelessWidget {
+  const PaymentInfo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 10,
+        bottom: 10,
+      ),
+      child: Row(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: EnjoeiColors.gray200,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(3),
+            ),
+            height: 20,
+            width: 33,
+            child: Center(
+              child: SizedBox(
+                height: 24,
+                width: 24,
+                child: SvgPicture.asset(
+                  'assets/icons/visa.svg',
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 5),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: EnjoeiColors.gray200,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(3),
+            ),
+            height: 20,
+            width: 33,
+            child: Center(
+              child: SizedBox(
+                height: 17,
+                width: 17,
+                child: SvgPicture.asset(
+                  'assets/icons/mastercard.svg',
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 5),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: EnjoeiColors.gray200,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(3),
+            ),
+            height: 20,
+            width: 33,
+            child: Center(
+              child: SizedBox(
+                height: 16,
+                width: 16,
+                child: SvgPicture.asset(
+                  'assets/icons/barcode.svg',
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 5),
+          Container(
+            height: 20,
+            width: 33,
+            child: Center(
+              child: SizedBox(
+                height: 16,
+                width: 16,
+                child: SvgPicture.asset(
+                  'assets/icons/information.svg',
+                  color: EnjoeiColors.gray300,
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -565,6 +662,7 @@ class ProductPage extends StatelessWidget {
                     children: <Widget>[
                       ProductActions(),
                       PriceInfo(),
+                      PaymentInfo()
                     ],
                   ),
                 ),
