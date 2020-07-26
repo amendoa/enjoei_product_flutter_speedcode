@@ -704,6 +704,120 @@ class ActionButtons extends StatelessWidget {
   }
 }
 
+class ProductInfo extends StatelessWidget {
+  const ProductInfo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(bottom: 30, top: 30),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1,
+          color: EnjoeiColors.gray100,
+        ),
+        borderRadius: BorderRadius.circular(3),
+      ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  width: 1,
+                  color: EnjoeiColors.gray100,
+                ),
+              ),
+            ),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'tamanho',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                    color: EnjoeiColors.gray500,
+                  ),
+                ),
+                Text(
+                  'p',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: EnjoeiColors.gray600,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'marca',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray500,
+                      ),
+                    ),
+                    Text(
+                      '-',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Center(
+                child: Container(
+                  width: 1,
+                  height: 32,
+                  color: EnjoeiColors.gray100,
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'condição',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: EnjoeiColors.gray500,
+                      ),
+                    ),
+                    Text(
+                      'usado',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: EnjoeiColors.gray600,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -729,6 +843,7 @@ class ProductPage extends StatelessWidget {
                       PriceInfo(),
                       PaymentInfo(),
                       ActionButtons(),
+                      ProductInfo()
                     ],
                   ),
                 ),
