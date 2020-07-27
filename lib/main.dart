@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -827,7 +829,7 @@ class SellerInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(top: 10, bottom: 10),
+        margin: EdgeInsets.only(top: 13, bottom: 13),
         padding: EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(
             border: Border.all(
@@ -1228,6 +1230,126 @@ class ProductDesc extends StatelessWidget {
   }
 }
 
+class HalfCircle extends CustomPainter {
+  Rect rect;
+  Paint _paint;
+
+  HalfCircle({Color color, double width, double height}) {
+    _paint = Paint()..color = color;
+
+    rect = Rect.fromCenter(
+      width: width,
+      height: height,
+      center: Offset(width / 2, height / 2),
+    );
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawArc(rect, 0, pi, true, _paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
+}
+
+class DeliveryLegend extends StatelessWidget {
+  const DeliveryLegend({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                color: EnjoeiColors.green,
+                shape: BoxShape.circle,
+              ),
+              height: 10,
+              width: 10,
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Text(
+              'Entregou no prazo',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w300,
+                color: EnjoeiColors.gray500,
+              ),
+            )
+          ],
+        ),
+        SizedBox(height: 13),
+        Row(
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    color: EnjoeiColors.gray400,
+                    shape: BoxShape.circle,
+                  ),
+                  height: 10,
+                  width: 10,
+                ),
+                CustomPaint(
+                  painter: HalfCircle(
+                    height: 10,
+                    width: 10,
+                    color: Colors.green,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Text(
+              'Entregou, mas atrasou um pouquinho',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w300,
+                color: EnjoeiColors.gray500,
+              ),
+            )
+          ],
+        ),
+        SizedBox(height: 13),
+        Row(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                color: EnjoeiColors.red,
+                shape: BoxShape.circle,
+              ),
+              height: 10,
+              width: 10,
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Text(
+              'Venda cancelada',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w300,
+                color: EnjoeiColors.gray500,
+              ),
+            )
+          ],
+        ),
+        SizedBox(height: 13),
+      ],
+    );
+  }
+}
+
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -1256,6 +1378,7 @@ class ProductPage extends StatelessWidget {
                       ProductInfo(),
                       ProductDesc(),
                       SellerInfo(),
+                      DeliveryLegend()
                     ],
                   ),
                 ),
