@@ -46,7 +46,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) => Container(
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -267,19 +270,19 @@ class SizeTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: Align(
         alignment: Alignment.bottomLeft,
         child: Container(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 5,
             bottom: 5,
             left: 8,
             right: 8,
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(3),
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(3),
             ),
             color: EnjoeiColors.white,
           ),
@@ -322,6 +325,7 @@ class _ProductSliderState extends State<ProductSlider> {
       alignment: Alignment.bottomLeft,
       children: <Widget>[
         Container(
+          color: EnjoeiColors.gray100,
           child: PageView(
             children: images
                 .map((item) => Image.asset(
@@ -406,7 +410,7 @@ class ProductActions extends StatelessWidget {
                       top: -10,
                       right: -12,
                       child: Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 5,
                           right: 5,
                           top: 3,
@@ -715,8 +719,8 @@ class ProductInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 30, top: 30),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 30, top: 30),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
@@ -728,7 +732,7 @@ class ProductInfo extends StatelessWidget {
         children: <Widget>[
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 20),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -829,8 +833,8 @@ class SellerInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(top: 13, bottom: 13),
-        padding: EdgeInsets.only(top: 20, bottom: 20),
+        margin: const EdgeInsets.only(top: 13, bottom: 13),
+        padding: const EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(
             border: Border.all(
               width: 1,
@@ -1354,7 +1358,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: EnjoeiColors.white,
       child: SafeArea(
         child: Scaffold(
           appBar: Header(),
