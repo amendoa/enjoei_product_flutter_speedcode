@@ -1,27 +1,22 @@
-## Tokens
+# Flutter speed code UI: Enjoei App Product Page
 
-### colors
+_This App is a replica of [Enjoei](https://www.enjoei.com.br/) APP UI. Actually, is a mix of WEB and MOBILE interfaces._
 
-#f4f2f0 -|
-#edebe9 -|
-rgba(202,197,191,0.5) => x80cac5bf
-#cac5bf
-#7d7a77
-#222222
+All UI/UX rights of this app are reserved by [Enjoei](https://www.enjoei.com.br/)
 
-#ffffff
+:movie_camera: [Youtube video](https://github.com/amendoa/enjoei_product_flutter_speedcode)
 
-#f16984
-#f05b78
+### Demo
 
-#6fcf67
-#ffc517
-#e85657
+<p> 
+    <img height="500" src="art/images/gif0.gif">
+</p>
 
-### fonts
+### UI
 
-300
-400
-600
-700
-800
+<p> 
+    <img height="500" src="art/images/print0.png">
+    <img height="500" src="art/images/print1.png">
+    <img height="500" src="art/images/print2.png">
+    <img height="500" src="art/images/print3.png">
+</p>
