@@ -1,10 +1,11 @@
 # Flutter speed code UI: Enjoei App Product Page
 
-_This App is a replica of [Enjoei](https://www.enjoei.com.br/) APP UI. Actually, is a mix of WEB and MOBILE interfaces._
+_This app is a mix of [Enjoei](https://www.enjoei.com.br/) Web and Mobile interfaces._
 
-All UI/UX rights of this app are reserved by [Enjoei](https://www.enjoei.com.br/)
+All rights of all UI/UX concepts presented here are reserved by [Enjoei](https://www.enjoei.com.br/)
 
-:movie_camera: [Youtube video](https://github.com/amendoa/enjoei_product_flutter_speedcode)
+ <a href="https://github.com/amendoa/enjoei_product_flutter_speedcode"> 
+ <img height="14" src="art/images/yt.png"/> Youtube Video</a>
 
 ### Demo
 
