@@ -4,7 +4,7 @@ _This app is a mix of [Enjoei](https://www.enjoei.com.br/) Web and Mobile interf
 
 All UI/UX concepts presented here are owned by [Enjoei](https://www.enjoei.com.br/)
 
- <a href="https://github.com/amendoa/enjoei_product_flutter_speedcode"> 
+ <a href="https://www.youtube.com/watch?v=vWuLXfgkL1c"> 
  <img height="14" src="art/images/yt.png"/> Youtube Video</a>
 
 ### Demo
